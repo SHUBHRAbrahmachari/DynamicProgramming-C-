@@ -125,7 +125,7 @@ int main() {
 
         int ans = find_minimum_movements(0, 0, maze, memory, m, n);
 
-        if (ans >= 9999)
+        if (ans >= std::numeric_limits<int>::max()/2)
             std::cout << "\n\t\t\t\t\t\t\t\t\t\tTarget cannot be reached!\n\n";
         else
             std::cout << "\n\t\t\t\t\t\t\t\t\t\tIt needs to take atleast " << ans << " movements!\n\n";
@@ -137,4 +137,5 @@ int main() {
         std::cout << error.what() << std::endl << std::endl;
     }
     return 0;
+
 }
