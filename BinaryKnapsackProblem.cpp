@@ -55,7 +55,7 @@ int find_maximum_wealth(int* &weights, int* &values, const int n, int remaining_
 
         // case 2 : collect the item, gather the value and move to next item
         int updated_capacity = remaining_capacity - weights[index];
-        int result2 = values[index] + (weights, values, n, updated_capacity, memory, index+1);
+        int result2 = values[index] + find_maximum_wealth(weights, values, n, updated_capacity, memory, index+1);
 
         // now get the maximum of it
 
@@ -89,4 +89,5 @@ int main() {
     std::cout << "\n\t\t\t\t\t\tMaximum value that can be collected is : " << res  << "\n\n";
 
     return 0;
+
 }
