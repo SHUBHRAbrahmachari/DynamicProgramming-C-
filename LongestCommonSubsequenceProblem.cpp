@@ -35,7 +35,7 @@ int get_longest_common_subsequence_length(const std::string &str1, const std::st
 
         int length2 = get_longest_common_subsequence_length(str1, str2, n1, n2, memory, index1, index2+1);
 
-        // option 3 > move both indexes forward together
+        // option 3 > move both indexes forward together (although this is not necessary... but just or thee sake of intuition)
         
         int length3 = get_longest_common_subsequence_length(str1, str2, n1, n2, memory, index1+1, index2+1);
 
@@ -64,5 +64,7 @@ int main() {
     int res = get_longest_common_subsequence_length(str1, str2, n1, n2, memory);
 
     std::cout << "\n\t\t\t\t\t\t\t\t\tThe maximum length of common subsequence is : " << res << "\n\n";
+
+    delete memory;
     return 0;
 }
