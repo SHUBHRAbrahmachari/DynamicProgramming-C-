@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <vector>
-#include <random>
 #include <limits>
 
 #define MAX std::numeric_limits<int>::max() / 3     // imagining infinity with `MAX`
@@ -115,7 +114,10 @@ int main() {
 
     int result = find_minimum_sequence_sum(sequence, size, count_of_numbers, memory);
 
-    std::cout << "\nThe minimum such summation is : " << result << std::endl;
+    if (result >= MAX)
+        std::cout << "\nNo such subsequence exists!\n";
+    else
+        std::cout << "\nThe minimum such summation is : " << result << std::endl;
 
     return 0;
 }
